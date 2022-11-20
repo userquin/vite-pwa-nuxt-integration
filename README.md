@@ -62,14 +62,13 @@ Add `SvelteKitPWA` plugin to `nuxt.config.ts` and configure it:
 ```ts
 // nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt/config'
-import VitePwaModule from '..'
 
 export default defineNuxtConfig({
     modules: [
-        VitePwaModule,
+        '@vite-pwa/nuxt'
     ],
     vite: {
-        logLevel: 'info',
+        logLevel: 'info'
     },
     pwa: {
       /* PWA options */  
