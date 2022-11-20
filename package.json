@@ -33,6 +33,8 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
+    "lint": "eslint .",
+    "lint-fix": "nr lint --fix",
     "dev": "nuxi dev playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "dev:build": "nuxi build playground",

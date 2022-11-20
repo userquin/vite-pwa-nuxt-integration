@@ -57,19 +57,19 @@ pnpm add @vite-pwa/nuxt -D
 
 ## 🦄 Usage
 
-Add `@vite-pwa/nuxt` plugin to `nuxt.config.ts` and configure it:
+Add `@vite-pwa/nuxt` module to `nuxt.config.ts` and configure it:
 
 ```ts
 // nuxt.config.ts
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-    modules: [
-        '@vite-pwa/nuxt'
-    ],
-    pwa: {
-      /* PWA options */  
-    }
+  modules: [
+    '@vite-pwa/nuxt'
+  ],
+  pwa: {
+    /* PWA options */
+  }
 })
 ```
 
