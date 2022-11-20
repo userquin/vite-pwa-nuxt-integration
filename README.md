@@ -57,7 +57,7 @@ pnpm add @vite-pwa/nuxt -D
 
 ## 🦄 Usage
 
-Add `SvelteKitPWA` plugin to `nuxt.config.ts` and configure it:
+Add `@vite-pwa/nuxt` plugin to `nuxt.config.ts` and configure it:
 
 ```ts
 // nuxt.config.ts
@@ -67,9 +67,6 @@ export default defineNuxtConfig({
     modules: [
         '@vite-pwa/nuxt'
     ],
-    vite: {
-        logLevel: 'info'
-    },
     pwa: {
       /* PWA options */  
     }
