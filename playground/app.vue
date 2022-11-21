@@ -1,67 +1,9 @@
-<script setup lang="ts">
-const onRegisteredSW = (swUrl: string, r: any) => {
-  // eslint-disable-next-line no-console
-  console.log(`SW Registered at ${swUrl}: ${r}`)
-}
-</script>
-
 <template>
   <div>
-    <vite-pwa-manifest />
     <NuxtLoadingIndicator />
-    <NuxtPage />
-    <ClientOnly>
-      <vite-pwa-register-sw
-        v-slot="{ cancelPWAPrompt, needRefresh, offlineReady, updateServiceWorker }"
-        :immediate="true"
-        :on-registered-sw="onRegisteredSW"
-      >
-        <div
-          v-if="offlineReady || needRefresh"
-          class="pwa-toast"
-          role="alert"
-        >
-          <div class="message">
-            <span v-if="offlineReady">
-              App ready to work offline
-            </span>
-            <span v-else>
-              New content available, click on reload button to update.
-            </span>
-          </div>
-          <button v-if="needRefresh" @click="updateServiceWorker()">
-            Reload
-          </button>
-          <button @click="cancelPWAPrompt">
-            Close
-          </button>
-        </div>
-      </vite-pwa-register-sw>
-    </ClientOnly>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
 
-<style>
-.pwa-toast {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 16px;
-  padding: 12px;
-  border: 1px solid #8885;
-  border-radius: 4px;
-  z-index: 1;
-  text-align: left;
-  box-shadow: 3px 4px 5px 0 #8885;
-}
-.pwa-toast .message {
-  margin-bottom: 8px;
-}
-.pwa-toast button {
-  border: 1px solid #8885;
-  outline: none;
-  margin-right: 5px;
-  border-radius: 2px;
-  padding: 3px 10px;
-}
-</style>
