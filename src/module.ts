@@ -97,11 +97,11 @@ export default defineNuxtModule<VitePWANuxtOptions>({
     await Promise.all([
       addComponent({
         name: 'VitePwaManifest',
-        filePath: resolver.resolve('./runtime/components/VitePwaManifest.client'),
+        filePath: resolver.resolve('./runtime/VitePwaManifest'),
       }),
       addComponent({
         name: 'VitePwaRegisterSw',
-        filePath: resolver.resolve('./runtime/components/VitePwaRegisterSw.client'),
+        filePath: resolver.resolve('./runtime/VitePwaRegisterSw'),
       }),
     ])
   },
